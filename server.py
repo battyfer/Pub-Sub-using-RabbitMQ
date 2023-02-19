@@ -69,7 +69,6 @@ def main(server: str):
                 type = result["type"]
                 authorr = result["author"]
                 date_get = result["date"]
-                # date_get = date_get.strftime('%d/%m/%Y')
                 if(type and authorr):
                     filtered_data = [d for d in data if d['type'] == type and d['author'] == authorr and datetime.strptime(d['date'], '%d/%m/%Y') > datetime.strptime(date_get, '%d/%m/%Y')]
                 elif(type and not(authorr)):
