@@ -73,7 +73,7 @@ def main(server: str):
                     filtered_data = [d for d in data if d['type'] == type and d['author'] == authorr and datetime.strptime(d['date'], '%d/%m/%Y') > datetime.strptime(date_get, '%d/%m/%Y')]
                 elif(type and not(authorr)):
                     filtered_data = [d for d in data if d['type'] == type and datetime.strptime(d['date'], '%d/%m/%Y') > datetime.strptime(date_get, '%d/%m/%Y')]
-                elif(type and not(authorr)):
+                elif(authorr and not(type)):
                     filtered_data = [d for d in data if d['author'] == authorr and datetime.strptime(d['date'], '%d/%m/%Y') > datetime.strptime(date_get, '%d/%m/%Y')]
                 else:
                     filtered_data = [d for d in data if datetime.strptime(d['date'], '%d/%m/%Y') > datetime.strptime(date_get, '%d/%m/%Y')]
